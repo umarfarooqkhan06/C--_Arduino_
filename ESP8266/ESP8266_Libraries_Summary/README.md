@@ -23,3 +23,16 @@ void Adafruit_GFX::writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
   // ...
 }
 ```
+
+## Example: DHT11 Sensor Data to Firebase
+
+`DHT11Firebase.ino` shows how to read temperature and humidity from a DHT11 sensor and send the values to a Firebase Realtime Database.
+
+```cpp
+#define FIREBASE_REALTIME_URL "YOUR_FIREBASE_URL"
+#define FIREBASE_REALTIME_SECRET "YOUR_DATABASE_SECRET"
+#define DHTPIN 2
+#define DHTTYPE DHT11
+```
+
+The sketch connects to WiFi, reads the sensor values and uses the `FirebaseRealtime` library to upload them every few seconds.
